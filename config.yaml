@@ -1,7 +1,7 @@
 baseURL: https://example.com
 languageCode: fr-FR
 title: NiortWeb, le blog
-theme: hugo-refresh
+theme: niortweb
 # theme: ../..
 
 # Option to specify the default language of the theme
