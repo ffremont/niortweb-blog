@@ -1,7 +1,7 @@
 ---
 title: "Speaker / animateur"
 date: 2019-11-23T21:45:40+01:00
-draft: true
+draft: false
 ---
 
 # Qui ?

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npx hugo && npx firebase deploy"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/ffremont/niortweb-blog#readme",
   "devDependencies": {
+    "firebase-tools": "^7.8.1",
     "hugo": "0.0.3"
   }
 }

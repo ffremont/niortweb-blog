@@ -1,0 +1,17 @@
+{{- $width   := .Get "width" -}}
+{{- $height   := .Get "height" -}}
+
+{{ with .Get "url" }}
+    <div class="container-slides" style="text-align:center">
+        <iframe
+        src="{{ . }}"
+        title="SlideShare Presentation"
+        frameborder="0"
+        marginwidth="0"
+        marginheight="0"
+        scrolling="no"
+        style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 20px;height:{{- $height -}}px; width:{{- $width -}}px;"
+        allowfullscreen="true">
+    </iframe>
+    </div>
+{{ end }}

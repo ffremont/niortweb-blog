@@ -1,6 +1,6 @@
 baseURL: https://example.com
 languageCode: fr-FR
-title: NiortWeb, le blog
+title: NiortWeb, meetup collaboratif
 theme: niortweb
 # theme: ../..
 
@@ -39,9 +39,9 @@ params:
   # option to specify the main colour of the theme
   mainColour: "#00b7ffff"
 
-  registerFormUrl: http://google.fr
-  voteUrl: http://google.fr
-  nextDate: 15/01/20
+  registerFormUrl: /inscription-non-ouverte
+  voteUrl: https://forms.gle/yWYxz4MWhiY9uATw5
+  # nextDate: 15/01/20
 
   # summary options
   summary:
@@ -73,11 +73,11 @@ params:
   # 404 page options
   pagNotFound:
     # option to specify the main picture of the sidebar
-    image: "/images/avataaars_404.png"
+    image: "/images/404-page-04.png"
     # option to specify the title of the 404 page
-    title: 404 Page Not Found :(
+    title: 404 page introuvable :(
     # option to specify the subtitle of the 404 page
-    subtitle: This is not the page you were looking for...
+    subtitle: La page demandée n'existe pas ou plus...
     # option to specify the width of the image in the 404 page
     imageWidth: 500px  
 
@@ -99,17 +99,17 @@ params:
   # footer options
   footer:
     # option to specify the logo in the footer
-    logo: "/images/footer.svg"
+    logo: "/images/footer.png"
     # option to specify your contact email in the footer
     email: ff.fremont.florent@gmail.com
     # option to specify your linkedin profile in the footer
-    linkedin: https://www.linkedin.com/florent-fremont-b2a943a9/
+    # linkedin: https://www.linkedin.com/florent-fremont-b2a943a9/
     # option to specify your facebook account in the footer; **uncomment** the below line to show in footer
     # facebook: your.username
     # option to specify your github account in the footer; **uncomment** the below line to show in footer
     github: ffremont
     # option to specify your twitter username in the footer; **uncomment** the below line to show in footer
-    twitter: ff_florent
+    #twitter: ff_florent
     # option to specify your instagram username in the footer; **uncomment** the below line to show in footer
     # instagram: username
     # option to specify the copyright in the footer
