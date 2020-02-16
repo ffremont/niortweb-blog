@@ -1,8 +1,8 @@
 {
   "name": "NiortWeb meetup collaboratif",
   "short_name": "NiortWeb",
-  "theme_color": "#ffffff",
-  "background_color": "#4fc1ea",
+  "theme_color": "#4fc1ea",
+  "background_color": "#ffffff",
   "display": "fullscreen",
   "start_url": "/",
   "icons": [
@@ -29,11 +29,6 @@
     {
       "src": "images/icons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/png"
-    },
-    {
-      "src": "images/icons/icon-192x192.png",
-      "sizes": "192x192",
       "type": "image/png"
     },
     {
