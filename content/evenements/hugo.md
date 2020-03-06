@@ -22,6 +22,9 @@ Il a été question de présenter ce qu'est un site statique et de faire un tour
 # Sources
 * l'application a été hébergée sur **netlify**. [Le code source se trouve sur github](https://github.com/ffremont/niortweb-hugo)
 * plateforme [netlify](https://www.netlify.com/)
+* exemple d'un **shortcode** :  ["slides" sur l'article "hugo"](https://raw.githubusercontent.com/ffremont/niortweb-blog/master/content/evenements/hugo.md)
+    * [l'implémentation du shortcode "slides"](https://raw.githubusercontent.com/ffremont/niortweb-blog/master/layouts/shortcodes/slides.html#)
+
 
 # Démo
 Pour testez chez vous :) :
