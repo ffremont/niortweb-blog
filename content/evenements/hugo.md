@@ -10,11 +10,13 @@ draft: false
 Le 03.03.20 à NiortTech, présenté par Florent FREMONT.   
 
 # Sujet : Hugo
-Avec l'émergence des frameworks Javascript et des besoins web, une catégorie de site web se développement, celle des générateurs de site statiques (SSG).
+Avec l'émergence des frameworks Javascript et des besoins web, une catégorie de site web se développe, celle des générateurs de site statiques (SSG).
 
 C'est toujours la même histoire qui se dessine, une nouvelle solution qui permet quoi ? et pour quels besoins ?
 
-Il a été question de présenter ce qu'est un site statique et de faire un tour des différences avec les autres solutions.
+Lors du meetup, il y a eu 
+* une présentation de ce qu'est un site statique e
+* un tour des différences avec les autres solutions (cms, saas)
 
 # Slides
 {{< slides url="//slides.com/florentfremont/hugo/embed" height="400" width="576" >}}

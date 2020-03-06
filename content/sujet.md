@@ -1,13 +1,14 @@
 ---
-title: "Générateur de site statique Hugo"
-date: 2019-11-23T22:09:16+01:00
-draft: false
+title: "Qu'est-ce que le 'Function As A Service' ?"
+date: 2020-03-06T12:00:00+01:00
+draft: false 
 ---
 
+Ce Meetup sera orienté découpage logiciel et il sera question de découvrir ensemble ce service cloud à travers **Firebase**.
 
-Lors de ce Meetup il sera question de présenter le framework **hugo**, ses possibilités et limites.
-Exploiter un nouveau framework c'est aussi savoir dans quel cadre on peut l'utiliser.
-
-Pour découvrir le sujet, nous balayerons les solutions concurrentes avant de rentrer dans la technique.
-
-[Documentation du framework Hugo](https://gohugo.io/)
+Nous aborderons notamment les points suivants :
+* responsabilité d'une fonction
+* scalabilité
+* avantages / inconvénients
+* pour quels besoins ?
+* impacts à la conception et à l'implémentation

@@ -43,7 +43,7 @@ params:
   registerFormUrl: https://forms.gle/urFDfSfX4TAxuZiu6
 
   voteUrl: https://forms.gle/yWYxz4MWhiY9uATw5
-  nextDate: 03/03/20
+  nextDate: 14/04/20
 
   # summary options
   summary:
@@ -84,7 +84,7 @@ params:
     imageWidth: 500px  
 
   news:
-    title: /!\ Prochaine date le 03/03/20
+    title: /!\ Prochaine date le 14/04/20
     #description: A NiortTech à 12h30, inscrivez-vous ;-)
 
   # homepage options
@@ -94,7 +94,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance le 03/03 sur le générateur web "Hugo" !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance le 14/04 sur le "Function As A Service" !
 
 
     # option to specify image in the homepage
