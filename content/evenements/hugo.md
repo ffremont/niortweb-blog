@@ -29,7 +29,7 @@ Lors du meetup, il y a eu
 
 
 # Démo
-Pour testez chez vous :) :
+Pour tester chez vous :) :
 * [installez hugo](https://gohugo.io/getting-started/installing/)
 * [git clone](https://github.com/ffremont/niortweb-hugo)
 * ```cd niortweb-hugo```
