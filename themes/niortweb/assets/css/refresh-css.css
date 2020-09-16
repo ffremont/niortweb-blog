@@ -44,3 +44,10 @@
 .hide{
     display: none;
 }
+
+.box .image.is-3by2 img{
+  max-height:100%;
+  width:auto;
+  height:auto;
+  margin:auto;
+}

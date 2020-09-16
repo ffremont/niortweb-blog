@@ -2,3 +2,4 @@ node_modules
 public
 resources
 resources/*
+resources/_gen

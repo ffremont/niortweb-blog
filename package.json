@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npx hugo && npx firebase deploy",
-    "start":"hugo server -D"
+    "deploy": "hugo && npx firebase deploy --only hosting --project niortweb",
+    "start": "hugo server -D"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ffremont/niortweb-blog#readme",
   "devDependencies": {
-    "firebase-tools": "^7.8.1",
+    "firebase-tools": "^7.16.2",
     "hugo": "0.0.3"
   }
 }
