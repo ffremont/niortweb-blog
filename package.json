@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "hugo && npx firebase deploy --only hosting --project niortweb",
+    "deploy": "npm version patch && hugo && npx firebase deploy --only hosting --project niortweb",
     "start": "hugo server -D"
   },
   "repository": {

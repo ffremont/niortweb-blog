@@ -12,3 +12,5 @@ Je ferai un peu de live coding pour montrer l'intérêt de ces technos par rappo
 
 
 Présentation réalisée par Adrien Vergnaud
+
+[S'inscrire]({{< param "registerFormUrl">}})
