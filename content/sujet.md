@@ -1,6 +1,6 @@
 ---
 title: "GatsbyJS et la JAMStack"
-date: 2020-09-16T6:00:00+01:00
+date: 2020-10-12T6:00:00+01:00
 draft: false 
 ---
 
@@ -13,4 +13,4 @@ Je ferai un peu de live coding pour montrer l'intérêt de ces technos par rappo
 
 Présentation réalisée par Adrien Vergnaud
 
-[S'inscrire]({{< param "registerFormUrl">}})
+[S'inscrire]({{< param "registerFormUrl">}}) pour participer physiquement au meetup ou à la web conf.
