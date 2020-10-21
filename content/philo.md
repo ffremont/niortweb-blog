@@ -4,6 +4,8 @@ date: 2019-11-23T21:28:25+01:00
 draft: false
 ---
 
+![meetup](/assets/images/meetup.jpg)
+
 # Collaboratif !
 NiortWeb est un meetup collaboratif qui a pour objectif de faire découvrir et d'échanger autour de thématiques web. 
 Le speaker / animateur partagera la moitier de son temps avec les participants afin de construire la fin du meetup sur la base des expériences de chacun.

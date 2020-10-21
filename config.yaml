@@ -28,6 +28,7 @@ Taxonomies:
 # https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 params:
+  description: NiortWeb est un meetup collaboratif Niortais pour faciliter le partage et l'accès aux expériences de chacun sur des sujets Web. Si tu as envie de progresser ou de partager ton expérience informatique ? Tu es développeur, concepteur, architecte, passionné, ergonome, ux designer ou simplement intéressé par les sujets. Ce MeetUp est fait pour toi, c'est un moment décontracté en présentiel ou à distance autour de thématiques web.
   # parameter used to specify if you want to minify the imported js
   jsMinify: false
   # parameter used to specify if you want to add the fingerprint to the imported js
@@ -43,7 +44,7 @@ params:
   registerFormUrl: https://forms.gle/urFDfSfX4TAxuZiu6
 
   voteUrl: https://forms.gle/6LsNdPkgKCHMtsYb9
-  nextDate: 15/10/20
+  nextDate: 09/11/20
 
   # summary options
   summary:
@@ -84,7 +85,7 @@ params:
     imageWidth: 500px  
 
   news:
-    title: /!\ Prochaine date le 15/10/20
+    title: /!\ Prochaine date le 09/11/20
     description: A NiortTech à 12h30, inscrivez-vous ;-)
 
   # homepage options
@@ -94,7 +95,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance le 15/10 sur "GatsbyJS et la JAMStack" !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance le 09/11 sur "Gérer Hugo (et aussi Gatsby) avec Netify CMS" !
 
 
     # option to specify image in the homepage
@@ -114,6 +115,7 @@ params:
     # facebook: your.username
     # option to specify your github account in the footer; **uncomment** the below line to show in footer
     github: ffremont
+    slack: https://join.slack.com/t/niortweb/shared_invite/zt-i8m2stt2-_4Un8r98efnxCUwXhJ2j3w
     # option to specify your twitter username in the footer; **uncomment** the below line to show in footer
     #twitter: ff_florent
     # option to specify your instagram username in the footer; **uncomment** the below line to show in footer

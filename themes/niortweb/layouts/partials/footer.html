@@ -63,6 +63,14 @@
               </a>
             </li>
             {{ end }}
+            {{ if isset .Site.Params.footer "slack" }}
+            <li>
+              <a href="{{ .Site.Params.footer.slack}}" target="_blank">
+                <span class="icon"><i class="fa fa-slack"></i></span>
+                Canal Slack
+              </a>
+            </li>
+            {{ end }}  
             {{ if isset .Site.Params.footer "github" }}
             <li>
               <a href="https://github.com/{{ .Site.Params.footer.github }}" target="_blank">
