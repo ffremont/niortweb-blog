@@ -12,7 +12,7 @@ Le speaker / animateur partagera la moitier de son temps avec les participants a
 
 # Indépendance
 Ce rendez-vous est et souhaite rester libre de toutes interventions de tiers sociétés.
-Autrement dit, chaque intervenant participe en sa qualité de profressionnel ou de pasionné.
+Autrement dit, chaque intervenant participe en sa qualité de profressionnel ou de passionné.
 
 # Pourquoi cet événement ?
 Passionné par l'informatique mais pas que, j'accorde beaucoup d'importance à l'humain, aux choix et à l'esprit critique dans ce que je peux produire. Il manquait sur Niort, un meetup qui refletait cela.
