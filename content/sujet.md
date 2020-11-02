@@ -1,6 +1,6 @@
 ---
 title: "Gérer Hugo (et aussi Gatsby) avec Netify CMS"
-date: 2020-10-24T6:00:00+01:00
+date: 2020-11-11T6:00:00+01:00
 draft: false 
 ---
 
@@ -16,5 +16,5 @@ Pour en savoir plus, rendez-vous en séance.
 
 Présentation réalisée par Florent FREMONT 
 
-[S'inscrire]({{< param "registerFormUrl">}}) pour participer physiquement au meetup ou à la web conf.
+[S'inscrire]({{< param "registerFormUrl">}}) à la visoconf (présentiel suspendu pendant le covid)
 

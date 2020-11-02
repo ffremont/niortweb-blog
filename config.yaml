@@ -29,6 +29,7 @@ Taxonomies:
 
 params:
   description: NiortWeb est un meetup collaboratif Niortais pour faciliter le partage et l'accès aux expériences de chacun sur des sujets Web. Si tu as envie de progresser ou de partager ton expérience informatique ? Tu es développeur, concepteur, architecte, passionné, ergonome, ux designer ou simplement intéressé par les sujets. Ce MeetUp est fait pour toi, c'est un moment décontracté en présentiel ou à distance autour de thématiques web.
+  newsletterForm: https://forms.gle/bKSgFf8KfaQTLtJV9
   # parameter used to specify if you want to minify the imported js
   jsMinify: false
   # parameter used to specify if you want to add the fingerprint to the imported js

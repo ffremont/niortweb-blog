@@ -1,0 +1,15 @@
+.tingle-modal:before{
+    backdrop-filter: blur(4px);
+}
+
+.tingle-modal{
+    background: rgb(0 0 0 / 31%);
+}
+
+.app-modal .tingle-modal-box__content{
+    padding-bottom: 1rem;
+}
+
+.app-modal h1{
+    font-size: 1.6rem;;
+}
