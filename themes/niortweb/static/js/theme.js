@@ -6,6 +6,9 @@ $(() =>{
         closeLabel: "Fermer",
         cssClass: ['app-modal'],
         beforeClose: function() {
+            if(window.sessionStorage){
+                window.sessionStorage.setItem('newsletter', '1');
+            }
             return true; 
         }
     });
