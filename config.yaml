@@ -96,7 +96,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance le 09/11 sur "Gérer Hugo (et aussi Gatsby) avec Netify CMS" !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance le 09/11 sur "Gérer Hugo (et aussi Gatsby) avec Netlify CMS" !
 
 
     # option to specify image in the homepage
