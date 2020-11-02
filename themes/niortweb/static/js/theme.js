@@ -16,13 +16,13 @@ $(() =>{
     `);
 
     modal.addFooterBtn(`S'abonner à la newsletter`, 'tingle-btn tingle-btn--primary btn-app-centered', function() {
-        if(window.localStorage){
-            window.localStorage.setItem('newsletter', '1');
+        if(window.sessionStorage){
+            window.sessionStorage.setItem('newsletter', '1');
         }
         window.location.href = window.newsletterForm;
     });
 
-    if(!window.localStorage || window.localStorage.getItem('newsletter') !== '1')
+    if(!window.sessionStorage || window.sessionStorage.getItem('newsletter') !== '1')
         modal.open();
 
     window.openNewsletter = function() {
