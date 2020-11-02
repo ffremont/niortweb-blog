@@ -1,5 +1,5 @@
 ---
-title: "Gérer Hugo (et aussi Gatsby) avec Netify CMS"
+title: "Gérer Hugo (et aussi Gatsby) avec Netlify CMS"
 date: 2020-11-11T6:00:00+01:00
 draft: false 
 ---
