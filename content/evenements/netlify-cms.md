@@ -35,4 +35,4 @@ Rendez-vous sur le site de [Netlify CMS](https://www.netlifycms.org/docs/start-w
 # En résumé
 Pourquoi "netlify CMS", car c'est simple, open source, et gratuit (quota élevé) tout comme netlify (solution de build / hébergement).
 Coupler "Netlify CMS" avec un site statique permet d'avoir un seul référentiel : votre code source (contient le contenu / structure).
-Avec son ergonomie minimaliste et efficace, Netlify CMS offre les fonctionnalités essentiel pour faire de l'édition de contenu.
+Avec son ergonomie minimaliste et efficace, Netlify CMS offre les fonctionnalités essentielles pour faire de l'édition de contenu.
