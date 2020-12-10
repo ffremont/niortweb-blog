@@ -15,7 +15,7 @@ Le 09.12.2020 sur Jitsi, présenté par Thibault GOUDOUNEIX.
 {{< youtube id="GOEpZ7S1pO8" >}}
 
 # Slides
-{{< slides url="//slides.com/florentfremont/deck-9f7ea9/embed" height="400" width="576" >}}
+[Consulter sur sharepoint](https://asigroupe-my.sharepoint.com/:p:/g/personal/tgoudouneix_asi_fr/EZulNFe1eblBmQdjvRRhMmEBUW_H9XoKp-jPKgpN_3zfhQ?e=eNRGCR)
 
 # Ressources
 * https://nilmanduil.medium.com/svelte-js-le-compilateur-en-guise-de-framework-5473f1d727f8
