@@ -17,7 +17,7 @@
     <meta property="og:description" content="{{- $description -}}" />
 {{end}}
 {{if isset .Params "image"}}
-    <meta property="og:image" content="{{- .Params.image | relURL -}}" />
+    <meta property="og:image" content="https://niortweb.fr{{- .Params.image | relURL -}}" />
 {{end}}
 {{ if isset .Params "title"}}
 <meta property="og:title" content="{{- .Params.title -}}" />
