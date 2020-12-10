@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-  <head>
-    {{- partial "meta.html" . -}}
-    <title>{{- block "title" . -}}{{- .Site.Title -}}{{- end -}}</title>
-    {{ partial "css.html" . }}
-  </head>
-  <body>
-    <!-- Counter -->
-    {{- partial "counter.html" -}}
-    <!-- Preloader -->
-    <div id="preloader">
-      <div id="status"></div>
-    </div>
 
-    {{- block "main" . -}} {{- end -}}
+<head>
+  {{- partial "meta.html" . -}}
 
-    {{- partial "javascript.html" . -}}
-  </body>
+  {{ with .Param "title" }}
+  <title>{{ . }}</title>
+  {{ else }}
+  <title>{{- .Site.Title -}}</title>
+  {{ end }}
+
+  {{ partial "css.html" . }}
+</head>
+
+<body>
+  <!-- Counter -->
+  {{- partial "counter.html" -}}
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="status"></div>
+  </div>
+
+  {{- block "main" . -}} {{- end -}}
+
+  {{- partial "javascript.html" . -}}
+</body>
+
 </html>

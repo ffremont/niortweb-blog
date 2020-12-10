@@ -41,13 +41,13 @@ params:
   # option to specify the main colour of the theme
   mainColour: "#00b7ffff"
 
-  #registerFormUrl: /inscription-non-ouverte
-  registerFormUrl: https://forms.gle/urFDfSfX4TAxuZiu6
+  registerFormUrl: /inscription-non-ouverte
+  #registerFormUrl: https://forms.gle/urFDfSfX4TAxuZiu6
 
   voteUrl: https://forms.gle/6LsNdPkgKCHMtsYb9
   
   # si valorisé, alor le bouton HOME est visible
-  nextDate: 09/12/20
+  #nextDate: 09/12/20
 
   # summary options
   summary:
@@ -97,8 +97,8 @@ params:
     title: NiortWeb, meetup collaboratif
     # option to specify the subtitle in the homepage
     
-    #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance sur "Svelte.js" !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
+    #subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance sur "Svelte.js" !
 
 
     # option to specify image in the homepage
