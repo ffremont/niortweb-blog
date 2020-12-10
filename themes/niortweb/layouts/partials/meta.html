@@ -12,8 +12,7 @@
 {{if gt (len .Description) 1}}
     <meta name="description" content="{{- .Description -}}">
     <meta property="og:description" content="{{- .Description -}}" />
-{{end}}
-{{if gt (len $description) 1}}
+{{else}}
     <meta name="description" content="{{- $description -}}">
     <meta property="og:description" content="{{- $description -}}" />
 {{end}}
