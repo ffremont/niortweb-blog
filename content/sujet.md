@@ -12,4 +12,6 @@ GatsbyJs est à présent un framework incontournable pour la génération de sit
 Je vous propose de prendre la parole pour parler de votre expérience sur GatsbyJs lors du prochain meetup.
 Nous partirons de mes réalisations pour aborder les forces, les faiblesses ainsi que mes conseils pour prendre en main ce générateur.
 
+Animé par **Romain BARRAUD**, développeur web
+
 {{< mat-button title="S'inscrire au meetup" >}} 
