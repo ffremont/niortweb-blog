@@ -28,7 +28,23 @@ Taxonomies:
 # https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 params:
+  maxPlaces: 12
+  myApi: http://localhost:5001/niortweb/us-central1/api/
+  #myApi: /
+  # si valorisé, alors le bouton HOME est visible
+  nextDate: 11/01/21
+
+  #registerFormUrl: /inscription-non-ouverte
+  registerFormUrl: /inscription
+  meetupId: FEEDBACK_GATSBYJS_110121
+  meetupTitle: Feedback sur GatsbyJs
+  meetupSpeaker: Romain BARRAUD
+  meetupWebconf: "http://google"
+  # https://jennamolby.com/tools/google-calendar-link-generator/
+  meetupGgCalendarLink: http://www.google.com/calendar/event?action=TEMPLATE&dates=20210111T113000Z%2F20210111T123000Z&text=NiortWeb%20%3A%20Feedback%20sur%20GatsbyJs&location=https%3A%2F%2Fniortweb.fr%2Fapi%2Fmeetup%2FAZERTY%2Fwebconf&details=GatsbyJs%20est%20%C3%A0%20pr%C3%A9sent%20un%20framework%20incontournable%20pour%20la%20g%C3%A9n%C3%A9ration%20de%20site%20static%20performant.%0A%0AJe%20vous%20propose%20de%20prendre%20la%20parole%20pour%20parler%20de%20votre%20exp%C3%A9rience%20sur%20GatsbyJs%20lors%20du%20prochain%20meetup.%20Nous%20partirons%20de%20mes%20r%C3%A9alisations%20pour%20aborder%20les%20forces%2C%20les%20faiblesses%20ainsi%20que%20mes%20conseils%20pour%20prendre%20en%20main%20ce%20g%C3%A9n%C3%A9rateur.%0A%0AAnim%C3%A9%20par%20Romain%20BARRAUD%2C%20d%C3%A9veloppeur%20web 
+
   description: NiortWeb est un meetup collaboratif Niortais pour faciliter le partage et l'accès aux expériences de chacun sur des sujets Web. Si tu as envie de progresser ou de partager ton expérience informatique ? Tu es développeur, concepteur, architecte, passionné, ergonome, ux designer ou simplement intéressé par les sujets. Ce MeetUp est fait pour toi, c'est un moment décontracté en présentiel ou à distance autour de thématiques web.
+  
   newsletterForm: https://forms.gle/bKSgFf8KfaQTLtJV9
   # parameter used to specify if you want to minify the imported js
   jsMinify: false
@@ -41,13 +57,7 @@ params:
   # option to specify the main colour of the theme
   mainColour: "#00b7ffff"
 
-  #registerFormUrl: /inscription-non-ouverte
-  registerFormUrl: https://forms.gle/urFDfSfX4TAxuZiu6
-
-  voteUrl: https://forms.gle/6LsNdPkgKCHMtsYb9
-  
-  # si valorisé, alor le bouton HOME est visible
-  nextDate: 11/01/21
+  #voteUrl: https://forms.gle/6LsNdPkgKCHMtsYb9 
 
   # summary options
   summary:
@@ -99,7 +109,6 @@ params:
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
     subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance "Feedback sur GatsbyJs" !
-
 
     # option to specify image in the homepage
     image: "/images/home.png" # worker.svg 

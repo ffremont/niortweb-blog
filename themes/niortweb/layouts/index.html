@@ -8,7 +8,6 @@
 
         {{- $homepage   := .Site.Params.homepage -}}
         {{- $nextDate   := .Site.Params.nextDate -}}
-        {{- $voteUrl   := .Site.Params.voteUrl -}}
         {{- $title      := index $homepage "title" -}}
         {{- $subtitle   := index $homepage "subtitle" -}}
         {{- $image      := index $homepage "image" -}}
@@ -31,7 +30,7 @@
                     Prochaine date le {{ $nextDate }}
                     </a>
                 {{else}}
-                <!--p><a class="button cta rounded primary-btn raised" href="{{- $voteUrl -}}">
+                <!--p><a class="button cta rounded primary-btn raised" href="">
                     Votez pour le prochain sujet
                     </a></p-->
                 {{ end }}

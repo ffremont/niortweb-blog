@@ -1,0 +1,165 @@
+{{- define "main" -}}
+
+    {{- partial "navbar.html" . -}}
+    {{- partial "navbar-clone.html" . -}}
+    
+    <section class="section is-medium">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-centered-tablet-portrait">
+              <h1 class="title is-2 section-title">Inscription : "{{- .Site.Params.meetupTitle -}}"</h1>
+              <h5 class="subtitle is-5 is-muted">{{- .Params.Subtitle -}}</h5>
+              <div class="divider"></div>
+              {{/*  <section class="section content">  */}}
+              <section class="section content has-text-justified">
+
+<div id="meetup-is-full" class="app-form-container hide">
+  <div class="alert alert-primary" role="alert">
+    Malheureusement toutes les places sont réservées. 
+    <br/>
+    Rendez-vous sur <a href="{{.Site.Params.footer.slack}}">Slack</a> ou par mail pour suivre les disponibilités.
+  </div>
+</div>
+
+<div id="register-form" class="app-form-container hide">
+  <div class="alert alert-primary" role="alert">
+    <strong id="counter">...</strong> places restantes
+  </div>
+  <div class="alert alert-secondary">
+    <ul>
+      <li>Sujet : <strong>{{ .Site.Params.meetupTitle }}</strong></li>
+      <li>Date : {{.Site.Params.nextDate}}</li>
+      <li>Horaires : de 12h30 à 13h30</li>
+      {{if gt (len .Site.Params.meetupWebconf) 7}}
+      <li>Lieu : EN LIGNE</li>
+      {{else}}
+      <li>Lieu : à Niort Tech, 12 Avenue Jacques Bujault, 79000 Niort</li>
+      {{end}}
+      
+      <li>Speaker / Animateur : {{ .Site.Params.meetupSpeaker }}</li>
+      <li>
+        <a href="/sujet">Plus d'info sur le sujet</a>
+      </li>
+    </ul>
+    
+  </div>
+    <form class="register-form">
+        <fieldset>
+          <label for="np">Prénom / Nom*</label>
+          <input name="fullName" required type="text" placeholder="Marc DUPUIT" id="np">
+
+          <label for="email">Email*</label>
+          <input name="email" required type="email" placeholder="marc.dupuit@azerty.fr" id="email">
+      
+          <label for="comment">Commentaire</label>
+          <textarea name="comment" placeholder="Bonjour..." id="comment"></textarea>
+
+          <div class="float-right">
+            <input  name="newsletter" type="checkbox" checked id="confirmField">
+            <label class="label-inline" for="confirmField">J'accepte de recevoir la newsletter</label>
+          </div>
+          <input class="button primary-btn raised" type="submit" value="Je m'inscris">
+        </fieldset>
+      </form>
+</div>
+
+<script>
+  window.appReady.push(function(){
+    fetch('{{.Site.Params.myApi}}api/meetup/{{.Site.Params.meetupId}}/counter')
+    .then( data => data.json())
+    .then(result => {
+      const counter = {{.Site.Params.maxPlaces}} - result.counter;
+      if(counter > 0 ){
+        $('#counter').html(counter);
+        $('#register-form').removeClass('hide');
+      }else{
+        $('#meetup-is-full').removeClass('hide');
+      }
+      
+    }).catch(() => {
+      alert(`Oups... une erreur est survenue, veuillez réitérer ultérieurement. Merci :) !`);
+    })
+
+    $('form.register-form').on('submit', (e) => {
+        e.preventDefault();
+
+        const values = {
+          meetup: {
+            id: '{{.Site.Params.meetupId}}',
+            label: '{{.Site.Params.meetupTitle}}',
+            webconf: '{{.Site.Params.meetupWebconf}}',
+            speaker: '{{.Site.Params.meetupSpeaker}}',
+            date: '{{.Site.Params.nextDate}}',
+            googleAgenda : '{{.Site.Params.meetupGgCalendarLink}}'
+          }
+        };
+        $.each($(e.target).find('input'),(i, v) => {
+            if($(v).prop('type') === 'checkbox'){
+                values[$(v).prop('name')] = !!$(v).prop('checked');
+            }else{
+                if($(v).prop('name'))
+                    values[$(v).prop('name')] = $(v).val();
+            }
+        });
+        $.each($(e.target).find('textarea'),(i, v) => {
+            if($(v).prop('name'))
+                values[$(v).prop('name')] = $(v).val();
+        });
+
+        fetch('{{.Site.Params.myApi}}api/meetup/{{.Site.Params.meetupId}}/register', {
+            method:'POST',
+            body: JSON.stringify(values),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+        .then( () => {
+            var modal = new tingle.modal({
+                footer: true,
+                stickyFooter: false,
+                closeMethods: ['overlay', 'button', 'escape'],
+                closeLabel: "Fermer",
+                cssClass: ['app-modal'],
+                beforeClose: () => {
+                window.location.href='/'}
+            });
+            
+            modal.setContent(`
+            <h1>Inscription réussie</h1>
+            <p>Un email vous a été envoyé avec toutes les informations.</p>
+            <br/>
+            <div class="copy-to-clip ${ '{{ .Site.Params.meetupWebconf }}'.length > 7 ? '': 'hide'}">
+            <input type="text" value="{{.Site.Params.myApi}}api/meetup/{{.Site.Params.meetupId}}/webconf">
+            <button onclick="copyToClip('.copy-to-clip input')">Copier le lien</button>
+              </div>
+            `);
+            modal.addFooterBtn(`Ajouter à Google Agenda`, 'tingle-btn tingle-btn--primary btn-app-centered', () => {
+                window.location.href='{{.Site.Params.meetupGgCalendarLink}}';
+            });
+            modal.addFooterBtn(`Fermer`, 'tingle-btn tingle-btn--primary btn-app-centered', () => {
+                modal.close();
+            });
+            modal.open();
+        }).catch(()=>{
+
+        })
+    })
+  });
+   
+
+</script>
+              </section>
+            </div>
+          </div>
+        </div>  
+      </section>
+      
+    
+    {{- partial "footer.html" . -}}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+    {{- partial "sidebar.html" . -}}
+
+{{- end -}}
