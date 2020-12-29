@@ -1,6 +1,0 @@
-{
-  "elasticemail": {
-    "url": "https://api.elasticemail.com/v2/email/send",
-    "apikey": "F14218AB64C4F60856752716FE6D43CE494C461BC4640B18498EE69924254ABE97CA0E88E742CB6DB6C9D454628C8103"
-  }
-}
