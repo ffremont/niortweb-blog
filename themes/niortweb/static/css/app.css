@@ -5,3 +5,11 @@
 .gg-form-container {
     width:100%;
 }
+
+.rotor .rotor-leaf-front{
+    margin-top:auto !important;
+}
+
+.flipdown{
+    margin:auto;
+}

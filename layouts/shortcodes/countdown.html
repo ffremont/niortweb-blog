@@ -1,0 +1,11 @@
+
+<div id="flipdown" class="flipdown"></div>
+
+<script>
+    window.appReady.push(() => {
+    console.log('ooooo')
+        new FlipDown({{.Site.Params.meetupTs}}, "flipdown", {
+            headings:    ["Jours", "Heures", "Minutes", "Seconds"]
+    }).start();
+    });    
+</script>

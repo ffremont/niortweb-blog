@@ -1,4 +1,7 @@
 $(() =>{
+    if(window.location.pathname !== '/')
+        return;
+
     var modal = new tingle.modal({
         footer: true,
         stickyFooter: false,

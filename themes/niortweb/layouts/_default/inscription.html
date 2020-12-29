@@ -28,9 +28,9 @@
   <div class="alert alert-secondary">
     <ul>
       <li>Sujet : <strong>{{ .Site.Params.meetupTitle }}</strong></li>
-      <li>Date : {{.Site.Params.nextDate}}</li>
+      <li>Date : {{ (time .Site.Params.meetupTs).Format "02/01/2006" }}</li>
       <li>Horaires : de 12h30 à 13h30</li>
-      {{if gt (len .Site.Params.meetupWebconf) 7}}
+      {{if eq .Site.Params.meetupWebconf 1}}
       <li>Lieu : EN LIGNE</li>
       {{else}}
       <li>Lieu : à Niort Tech, 12 Avenue Jacques Bujault, 79000 Niort</li>
@@ -87,9 +87,9 @@
           meetup: {
             id: '{{.Site.Params.meetupId}}',
             label: '{{.Site.Params.meetupTitle}}',
-            webconf: '{{.Site.Params.meetupWebconf}}',
+            webconf: {{.Site.Params.meetupWebconf}} ? true : false,
             speaker: '{{.Site.Params.meetupSpeaker}}',
-            date: '{{.Site.Params.nextDate}}',
+            date: '{{ (time .Site.Params.meetupTs).Format "02/01/2006" }}',
             googleAgenda : '{{.Site.Params.meetupGgCalendarLink}}'
           }
         };
@@ -128,7 +128,7 @@
             <h1>Inscription réussie</h1>
             <p>Un email vous a été envoyé avec toutes les informations.</p>
             <br/>
-            <div class="copy-to-clip ${ '{{ .Site.Params.meetupWebconf }}'.length > 7 ? '': 'hide'}">
+            <div class="copy-to-clip ${ {{ .Site.Params.meetupWebconf }} ? '': 'hide'}">
             <input type="text" value="{{.Site.Params.myApi}}api/meetup/{{.Site.Params.meetupId}}/webconf">
             <button onclick="copyToClip('.copy-to-clip input')">Copier le lien</button>
               </div>

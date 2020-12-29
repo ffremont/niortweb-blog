@@ -7,7 +7,7 @@
         {{- partial "news.html" . -}}
 
         {{- $homepage   := .Site.Params.homepage -}}
-        {{- $nextDate   := .Site.Params.nextDate -}}
+        {{- $meetupTs   := .Site.Params.meetupTs -}}
         {{- $title      := index $homepage "title" -}}
         {{- $subtitle   := index $homepage "subtitle" -}}
         {{- $image      := index $homepage "image" -}}
@@ -25,9 +25,9 @@
                 </h2>
                 {{- end -}}
                
-                <p style="text-align: center;">{{ if $nextDate }}
+                <p style="text-align: center;">{{ if $meetupTs }}
                <a class="button cta rounded primary-btn raised" style="margin-top:10px;" href="/sujet">
-                    Prochaine date le {{ $nextDate }}
+                    Prochaine date le {{ (time $meetupTs).Format "02/01/2006" }}
                     </a>
                 {{else}}
                 <!--p><a class="button cta rounded primary-btn raised" href="">
