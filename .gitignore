@@ -3,3 +3,4 @@ public
 resources
 resources/*
 resources/_gen
+functions/.runtimeconfig.json

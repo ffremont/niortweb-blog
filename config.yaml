@@ -29,7 +29,7 @@ Taxonomies:
 
 params:
   maxPlaces: 5
-  myApi: http://localhost:5001/niortweb/us-central1/api/
+  myApi: https://niortweb.fr/
   #myApi: /
   
 
@@ -96,6 +96,17 @@ params:
     title: 404 page introuvable :(
     # option to specify the subtitle of the 404 page
     subtitle: La page demandée n'existe pas ou plus...
+    # option to specify the width of the image in the 404 page
+    imageWidth: 500px  
+
+  # 404 page options
+  pagErr:
+    # option to specify the main picture of the sidebar
+    image: "/images/404-page-04.png"
+    # option to specify the title of the 404 page
+    title: Une erreur est survenue :(
+    # option to specify the subtitle of the 404 page
+    subtitle: Veuillez revenir un peu plus tard...
     # option to specify the width of the image in the 404 page
     imageWidth: 500px  
 
