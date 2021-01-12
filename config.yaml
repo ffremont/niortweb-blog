@@ -33,11 +33,11 @@ params:
   #myApi: /
   
 
-  #registerFormUrl: /inscription-non-ouverte
-  registerFormUrl: /inscription
+  registerFormUrl: /inscription-non-ouverte
+  #registerFormUrl: /inscription
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 1610364600
+  meetupTs: 0
   meetupId: FEEDBACK_GATSBYJS_110121
   meetupTitle: Feedback sur GatsbyJs
   meetupSpeaker: Romain BARRAUD
@@ -121,7 +121,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ? Prochaine séance "Feedback sur GatsbyJs" !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous !
 
     # option to specify image in the homepage
     image: "/images/home.png" # worker.svg 
