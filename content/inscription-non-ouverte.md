@@ -6,6 +6,6 @@ image: '/assets/images/prochainement.png'
 draft: false
 ---
 
-{{< img src="/assets/images/prochainement.png" title="Les inscriptions ne sont pas encore ouverte." >}}
+{{< img src="/assets/images/prochainement.png" title="Les inscriptions ne sont pas encore ouvertes." >}}
 
 
