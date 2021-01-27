@@ -28,22 +28,22 @@ Taxonomies:
 # https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 params:
-  maxPlaces: 5
+  maxPlaces: 15
   myApi: https://niortweb.fr/
-  #myApi: /
+  #myApi: http://localhost:5001/niortweb/us-central1/api/
   
 
-  registerFormUrl: /inscription-non-ouverte
-  #registerFormUrl: /inscription
+  #registerFormUrl: /inscription-non-ouverte
+  registerFormUrl: /inscription
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 0
-  meetupId: FEEDBACK_GATSBYJS_110121
-  meetupTitle: Feedback sur GatsbyJs
-  meetupSpeaker: Romain BARRAUD
+  meetupTs: 1613478600
+  meetupId: QUEST_CE_QUE_IA_160221
+  meetupTitle: Qu’est-ce qu’IA ? Par où commencer ?
+  meetupSpeaker: Quentin NICOLLE
   meetupWebconf: 1
   # https://jennamolby.com/tools/google-calendar-link-generator/
-  meetupGgCalendarLink: http://www.google.com/calendar/event?action=TEMPLATE&dates=20210111T113000Z%2F20210111T123000Z&text=NiortWeb%20%3A%20Feedback%20sur%20GatsbyJs&location=https%3A%2F%2Fniortweb.fr%2Fapi%2Fmeetup%2FFEEDBACK_GATSBYJS_110121%2Fwebconf&details=GatsbyJs%20est%20%C3%A0%20pr%C3%A9sent%20un%20framework%20incontournable%20pour%20la%20g%C3%A9n%C3%A9ration%20de%20site%20static%20performant.%0A%0AJe%20vous%20propose%20de%20prendre%20la%20parole%20pour%20parler%20de%20votre%20exp%C3%A9rience%20sur%20GatsbyJs%20lors%20du%20prochain%20meetup.%20Nous%20partirons%20de%20mes%20r%C3%A9alisations%20pour%20aborder%20les%20forces%2C%20les%20faiblesses%20ainsi%20que%20mes%20conseils%20pour%20prendre%20en%20main%20ce%20g%C3%A9n%C3%A9rateur.%0A%0AAnim%C3%A9%20par%20Romain%20BARRAUD%2C%20d%C3%A9veloppeur%20web 
+  meetupGgCalendarLink: http://www.google.com/calendar/event?action=TEMPLATE&dates=20210216T113000Z%2F20210216T123000Z&text=Qu%E2%80%99est-ce%20qu%E2%80%99IA%20%3F%20Par%20o%C3%B9%20commencer%20%3F&location=https%3A%2F%2Fniortweb.fr%2Fapi%2Fmeetup%2FQUEST_CE_QUE_IA_160221%2Fwebconf&details=L%E2%80%99intelligence%20artificele%20(ou%20IA%20pour%20les%20intimes)%20est%20bien%20grand%20mot%20qui%20cache%20plein%20de%20myst%C3%A8res.%0A%0AEnsemble%20nous%20allons%20ouvrir%20cette%20boite%20noire%20pour%20y%20d%C3%A9couvrir%20ce%20monde%20merveilleux%20aux%20perspectives%20casi%20infinies.%0A%0AAu%20programme%20de%20se%20talk%20%3A%0A%0ANous%20allons%20donner%20une%20d%C3%A9finition%20%C3%A0%20l%E2%80%99intelligence%20artificielle%0AD%C3%A9couvrir%20quel%20lien%20elle%20entretien%20avec%20le%20domaine%20de%20la%20data%20science%0AVoir%20que%2C%20comme%20dans%20l%E2%80%99esp%C3%A8re%20humaine%2C%20l%E2%80%99intelligence%20peut%20se%20pr%C3%A9senter%20sous%20plusieurs%20formes.%0AEn%202021%2C%20la%20mise%20en%20place%20d%E2%80%99une%20intelligence%20artificielle%20associ%C3%A9%20%C3%A0%20un%20domaine%20ou%20un%20besoin%20se%20d%C3%A9mocratise%20grandement.%20Nous%20ferons%20aussi%20le%20tour%20de%20quelques%20pr%C3%A9requis%20et%2Fou%20outils%20pour%20commencer%20%C3%A0%20impl%C3%A9menter%20nos%20propres%20intelligences.%0A%0AAnim%C3%A9%20par%20Quentin%20NICOLLE
 
   description: NiortWeb est un meetup collaboratif Niortais pour faciliter le partage et l'accès aux expériences de chacun sur des sujets Web. Si tu as envie de progresser ou de partager ton expérience informatique ? Tu es développeur, concepteur, architecte, passionné, ergonome, ux designer ou simplement intéressé par les sujets. Ce MeetUp est fait pour toi, c'est un moment décontracté en présentiel ou à distance autour de thématiques web.
   
