@@ -39,7 +39,7 @@ params:
   # 11/01/21 si valorisé, alors le bouton HOME est visible
   meetupTs: 1613478600
   meetupId: QUEST_CE_QUE_IA_160221
-  meetupTitle: Qu’est-ce qu’IA ? Par où commencer ?
+  meetupTitle: Qu’est-ce que l’IA ? Par où commencer ?
   meetupSpeaker: Quentin NICOLLE
   meetupWebconf: 1
   # https://jennamolby.com/tools/google-calendar-link-generator/

@@ -1,7 +1,7 @@
 ---
-title: "Qu’est-ce qu’IA ? Par où commencer ?"
+title: "Qu’est-ce que l'IA ? Par où commencer ?"
 date: 2021-01-26T6:00:00+01:00
-description: "L’intelligence artificeLle (ou IA pour les intimes) est bien grand mot qui cache plein de mystères. "
+description: "L’intelligence artificelle (ou IA pour les intimes) est bien grand mot qui cache plein de mystères. "
 image: '/assets/ia/iStock-1029035836-e1575983057612.jpg'
 aliases:
     - /sujet
