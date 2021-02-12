@@ -28,7 +28,7 @@ Taxonomies:
 # https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 params:
-  maxPlaces: 15
+  maxPlaces: 20
   myApi: https://niortweb.fr/
   #myApi: http://localhost:5001/niortweb/us-central1/api/
   
