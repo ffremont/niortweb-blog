@@ -33,11 +33,11 @@ params:
   #myApi: http://localhost:5001/niortweb/us-central1/api/
   
 
-  #registerFormUrl: /inscription-non-ouverte
-  registerFormUrl: /inscription
+  registerFormUrl: /inscription-non-ouverte
+  #registerFormUrl: /inscription
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 1613478600
+  meetupTs: 0
   meetupId: QUEST_CE_QUE_IA_160221
   meetupTitle: Qu’est-ce que l’IA ? Par où commencer ?
   meetupSpeaker: Quentin NICOLLE

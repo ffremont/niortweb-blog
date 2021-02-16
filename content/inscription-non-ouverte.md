@@ -1,6 +1,6 @@
 ---
 title: "Inscription"
-date: 2020-12-10T06:52:55+01:00
+date: 2021-02-16T12:00:00+01:00
 description: 'Prochain meetup en préparation :) Vous pourrez prochainement vous inscrire. En attendant, abonnez-vous à la newsletter'
 image: '/assets/images/prochainement.png'
 draft: false

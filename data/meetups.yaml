@@ -1,0 +1,11 @@
+meetups:
+  - path: QUEST_CE_QUE_IA_160221
+    fields:
+      id : "QUEST_CE_QUE_IA_160221"
+      enable : 0
+      label : "Qu’est-ce que l’IA ? Par où commencer ?"
+      date : 1613478600
+      speaker : "Quentin NICOLLE"
+      googleAgenda : "http://www.google.com/calendar/event?action=TEMPLATE&dates=20210216T113000Z%2F20210216T123000Z&text=Qu%E2%80%99est-ce%20qu%E2%80%99IA%20%3F%20Par%20o%C3%B9%20commencer%20%3F&location=https%3A%2F%2Fniortweb.fr%2Fapi%2Fmeetup%2FQUEST_CE_QUE_IA_160221%2Fwebconf&details=L%E2%80%99intelligence%20artificelle%20(ou%20IA%20pour%20les%20intimes)%20est%20bien%20grand%20mot%20qui%20cache%20plein%20de%20myst%C3%A8res.%0A%0AEnsemble%20nous%20allons%20ouvrir%20cette%20boite%20noire%20pour%20y%20d%C3%A9couvrir%20ce%20monde%20merveilleux%20aux%20perspectives%20casi%20infinies.%0A%0AAu%20programme%20de%20se%20talk%20%3A%0A%0ANous%20allons%20donner%20une%20d%C3%A9finition%20%C3%A0%20l%E2%80%99intelligence%20artificielle%0AD%C3%A9couvrir%20quel%20lien%20elle%20entretien%20avec%20le%20domaine%20de%20la%20data%20science%0AVoir%20que%2C%20comme%20dans%20l%E2%80%99esp%C3%A8re%20humaine%2C%20l%E2%80%99intelligence%20peut%20se%20pr%C3%A9senter%20sous%20plusieurs%20formes.%0AEn%202021%2C%20la%20mise%20en%20place%20d%E2%80%99une%20intelligence%20artificielle%20associ%C3%A9%20%C3%A0%20un%20domaine%20ou%20un%20besoin%20se%20d%C3%A9mocratise%20grandement.%20Nous%20ferons%20aussi%20le%20tour%20de%20quelques%20pr%C3%A9requis%20et%2Fou%20outils%20pour%20commencer%20%C3%A0%20impl%C3%A9menter%20nos%20propres%20intelligences.%0A%0AAnim%C3%A9%20par%20Quentin%20NICOLLE"
+      webConf : 1
+      theme : "IA"

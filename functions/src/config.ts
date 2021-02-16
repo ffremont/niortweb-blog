@@ -6,10 +6,9 @@ export class Config {
 
     public static WHITELIST_USERS = [''];
 
-    public static adminApiKey = '61caf05d-50fb-4cd4-856d-08a5bb03e56a';
-
     public static webconfs : any = {
-        'FEEDBACK_GATSBYJS_110121': 'https://meet.jit.si/FEEDBACK_GATSBYJS_110121'
+        'FEEDBACK_GATSBYJS_110121': 'https://meet.jit.si/FEEDBACK_GATSBYJS_110121',
+        'QUEST_CE_QUE_IA_160221': 'https://meet.jit.si/QUEST_CE_QUE_IA_160221_5bb03e56'
     }
 
 

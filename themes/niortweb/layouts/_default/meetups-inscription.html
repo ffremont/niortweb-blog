@@ -1,0 +1,49 @@
+{{- define "main" -}}
+
+{{- partial "navbar.html" . -}}
+{{- partial "navbar-clone.html" . -}}
+
+<section class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title is-2 section-title">Meetups</h1>
+        <h5 class="subtitle is-5 is-muted">{{- .Params.Subtitle -}}</h5>
+        <div class="divider"></div>
+        {{/*  <section class="section content">  */}}
+        <section class="section content has-text-justified">
+
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Thème</th>
+                <th>Libellé</th>
+                <th>Participer</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {{ range .Site.Data.meetups }}
+                {{ . }}
+              {{ end }}
+            </tbody>
+          </table>
+
+      </div>
+
+</section>
+</div>
+</div>
+</div>
+</section>
+
+
+{{- partial "footer.html" . -}}
+
+<!-- Back To Top Button -->
+<div id="backtotop"><a href="#"></a></div>
+
+{{- partial "sidebar.html" . -}}
+
+{{- end -}}
