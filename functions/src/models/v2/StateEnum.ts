@@ -1,3 +1,3 @@
 export enum StateEnum{
-    DRAFT, OK
+    DRAFT = 'DRAFT', OK = 'OK'
 }

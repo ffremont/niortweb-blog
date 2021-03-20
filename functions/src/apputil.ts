@@ -73,6 +73,24 @@ export class AppUtil{
         }
     }
 
+    public static noContent(res: Response){
+        res.status(204);
+        res.send();
+    }
+
+    /**
+     * Retourne vrai si c'est un admin
+     * @param email 
+     */
+    public static isAdmin(email:string){
+        console.log(email);
+        return Config.ADMINS.indexOf(email) > -1;
+    }
+
+    /**
+     * Retourne le mail de la personne connecté
+     * @param request 
+     */
     public static async authorized(request:Request) : Promise<string|null>{
         if(process.env.STUB_AUTH_MAIL){
             return process.env.STUB_AUTH_MAIL;
@@ -87,7 +105,7 @@ export class AppUtil{
         // @see https://firebase.google.com/docs/reference/admin/node/admin.auth.UserRecord
         const userRecord = await admin.auth().getUser(decodedToken.uid);
 
-        return Config.WHITELIST_USERS.indexOf(userRecord.email||'') > -1 ? userRecord.email||'' : null;
+        return userRecord.email || null;
     }
 
     public static notAuthorized(res:Response){

@@ -1,4 +1,4 @@
-import { Event } from "firebase-functions";
+
 
 export interface Contributor{
     email:string;
@@ -8,6 +8,8 @@ export interface Contributor{
      * En quelques mots, je me présente
      */
     iam:string;
+
+    
     comment:string;
 
     /**

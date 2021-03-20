@@ -32,6 +32,11 @@ export interface Event{
     createdAt:number;
 
     /**
+     * Ts 
+     */
+    scheduled:number;
+
+    /**
      * Infos du speaker
      */
     speaker:Speaker;
@@ -42,9 +47,14 @@ export interface Event{
     webconfLink?: string;
 
     /**
+     * lien youtbue live
+     */
+    youtubeLink?:string;
+
+    /**
      * Durée en minute de l'événement
      */
-    duration: 60;
+    duration: number;
 
     /**
      * URL de l'image du meetup (lien cloudinary)

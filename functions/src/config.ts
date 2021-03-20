@@ -2,6 +2,7 @@ import { Contributor } from "./models/Contributor";
 
 export class Config {
     public static appBaseUrl = 'https://niortweb.fr';
+    public static ADMINS = ['ff.fremont.florent@gmail.com'];
     public static apikeyWebhook = '03ffef4e-091b-4t57-b34d-d6sl80f5a84b';
 
     public static WHITELIST_USERS = [''];

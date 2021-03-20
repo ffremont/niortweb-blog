@@ -1,4 +1,4 @@
-export interface Speaker{
+export interface    Speaker{
     firstname:string;
     lastname:string;
     email:string;

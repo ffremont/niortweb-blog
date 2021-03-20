@@ -1,3 +1,3 @@
 export enum TagEnum{
-    IA, TECH
+    IA = 'IA', TECH = 'TECH'
 }
