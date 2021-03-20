@@ -1,4 +1,6 @@
 import { Contributor } from "./models/Contributor";
+import { Event } from "./models/v2/Event";
+import * as moment from 'moment';
 
 export class Config {
     public static appBaseUrl = 'https://niortweb.fr';
@@ -11,6 +13,18 @@ export class Config {
         'FEEDBACK_GATSBYJS_110121': 'https://meet.jit.si/FEEDBACK_GATSBYJS_110121',
         'QUEST_CE_QUE_IA_160221': 'https://meet.jit.si/QUEST_CE_QUE_IA_160221_5bb03e56'
     }
+
+    public static registrationOnEvent = {
+        template: 'niortwebapp_inscription',
+        subject: (e: Event) => `NiortWebApp - Inscription enregistrée pour `,
+        data: (e: Event) => {
+            return {
+                eventId: e.id,
+                eventTitle: e.title,
+                eventScheduled: `${moment(e.scheduled).format('HH:mm')} le ${moment(e.scheduled).format('ddd D MMM')}`
+            }
+        }
+    };
 
 
     public static registeredEmailOnline = {

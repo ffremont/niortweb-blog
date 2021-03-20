@@ -18,6 +18,13 @@ export class NotifService {
         return data;
     }
 
+    /**
+     * Envoi un mail
+     * @param templateName 
+     * @param to 
+     * @param subject 
+     * @param data 
+     */
     public async send(templateName: string, to: string, subject: string, data: any): Promise<void> {
         AppUtil.debug("notif > send ", templateName, to, subject, data);
         const body = await this.createData();

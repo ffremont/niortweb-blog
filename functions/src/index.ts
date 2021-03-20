@@ -4,8 +4,12 @@ import * as admin from 'firebase-admin';
 import registrationResource from './resources/registration.resource';
 import context from './context';
 import cors = require('cors');
+import * as moment from 'moment';
+import 'moment-timezone';
+import 'moment/locale/fr';
 import meetupResource from './resources/meetup.resource';
 import eventResource from './resources/event.resource';
+import myProfilResource from './resources/myprofil.resource';
 
 const customCreds: any = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 if (customCreds) {
@@ -17,6 +21,9 @@ if (customCreds) {
 } else {
      admin.initializeApp();  
 }
+moment.locale('fr');
+moment.tz.setDefault("Europe/Paris");
+
 context.db(admin.firestore());
 const app = express();
 app.use(cors());
@@ -30,5 +37,8 @@ app.get('/api/meetup/:id/contributors', meetupResource.contributors.bind(meetupR
 app.post('/api/events', eventResource.addEvent.bind(eventResource));
 app.get('/api/events', eventResource.getEvents.bind(eventResource));
 app.put('/api/events/:id', eventResource.update.bind(eventResource));
+
+app.get('/api/my-profil', myProfilResource.get.bind(myProfilResource));
+app.put('/api/my-profil', myProfilResource.update.bind(myProfilResource));
 
 export const api = functions.https.onRequest(app);

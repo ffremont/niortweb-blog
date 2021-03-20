@@ -6,6 +6,8 @@ import { Event } from "../models/v2/Event";
 import { StateEnum } from "../models/v2/StateEnum";
 import * as uuid from 'uuid-random';
 import { Contributor } from "../models/v2/Contributor";
+import notifService from '../services/notif.service';
+import { Config } from "../config";
 
 class EventResource {
 
@@ -75,6 +77,13 @@ class EventResource {
             if(registration && (currentEvent.contributors.findIndex((c:Contributor) => c.email === currentEmail) === -1)){
                 currentEvent.contributors.push(registration);
                 await this.eventDao.set(currentEvent);
+
+                await notifService.send(
+                    Config.registrationOnEvent.template, 
+                    currentEmail, 
+                    Config.registrationOnEvent.subject(currentEvent),
+                    Config.registrationOnEvent.data(currentEvent)
+                );
             }
         }               
         
