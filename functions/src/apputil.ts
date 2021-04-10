@@ -83,7 +83,6 @@ export class AppUtil{
      * @param email 
      */
     public static isAdmin(email:string){
-        console.log(email);
         return Config.ADMINS.indexOf(email) > -1;
     }
 
