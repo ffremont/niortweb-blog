@@ -40,7 +40,7 @@ class RegistrationResource {
             id: uuid(),
             meetup
         };
-        console.log(contributor);
+        
         await this.contributorDao.add(contributor);
 
         let emailConf: any = Config.registeredEmail;
@@ -48,7 +48,7 @@ class RegistrationResource {
             emailConf = Config.registeredEmailOnline;
         }
 
-        notifService.send(
+        await notifService.send(
             emailConf.template,
             email,
             emailConf.subject(contributor),

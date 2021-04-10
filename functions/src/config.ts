@@ -1,22 +1,69 @@
 import { Contributor } from "./models/Contributor";
-import { Event } from "./models/v2/Event";
+
 import * as moment from 'moment';
+import { Event } from "./models/v2/Event";
 
 export class Config {
     public static appBaseUrl = 'https://niortweb.fr';
+    public static webappBaseUrl = 'https://app.niortweb.fr';
     public static ADMINS = ['ff.fremont.florent@gmail.com'];
+    public static SOON_EXPECTED = 4 * 3600000; // une événement est dit "attendu", lorsqu'il est prévu dans les 4 heures
+    public static ASK_REVIEW_IN = 48 * 3600000; // demande une avis après 48h
+
+    // deprecated
     public static apikeyWebhook = '03ffef4e-091b-4t57-b34d-d6sl80f5a84b';
 
     public static WHITELIST_USERS = [''];
 
+    // deprecated
     public static webconfs : any = {
         'FEEDBACK_GATSBYJS_110121': 'https://meet.jit.si/FEEDBACK_GATSBYJS_110121',
         'QUEST_CE_QUE_IA_160221': 'https://meet.jit.si/QUEST_CE_QUE_IA_160221_5bb03e56'
     }
 
+    public static recallEvent = {
+        push : {
+            title: (e:Event) => `🙃 Rappel événement 🗨 Niortweb `,
+            url: (e:Event) => `${Config.webappBaseUrl}/evenements/${e.id}`,
+            body: (e:Event) => `🕧 Rendez-vous à ${moment(e.scheduled).format('HH:mm')} le ${moment(e.scheduled).format('ddd D MMM')} pour 🗨 ${e.title}`
+        },
+        email : {
+            template: 'niortwebapp_rappel',
+            subject: (e: Event) => `NiortWebApp - Rappel pour "${e.title}"`,
+            data: (e: Event) => {
+                return {
+                    eventId: e.id,
+                    eventTitle: e.title,
+                    eventScheduled: `${moment(e.scheduled).format('HH:mm')} le ${moment(e.scheduled).format('ddd D MMM')}`
+                }
+            }
+        }
+    };
+
+    public static reviewOfEvent = {
+        push : {
+            title: (e:Event) => `🗳 Donnez votre avis 🗨 Niortweb `,
+            body: (e:Event) => `⭐ Rendez-vous sur app.niortweb.fr `,
+            url: (e:Event) => `${Config.webappBaseUrl}/evenements/${e.id}`
+        },
+        email : {
+            template: 'niortwebapp_avis',
+            subject: (e: Event) => `NiortWebApp - Je donne mon avis sur "${e.title}"`,
+            data: (e: Event) => {
+                return {
+                    eventId: e.id,
+                    eventTitle: e.title
+                }
+            }
+        }
+    };
+
+    /**
+     * Inscription à l'événement
+     */
     public static registrationOnEvent = {
         template: 'niortwebapp_inscription',
-        subject: (e: Event) => `NiortWebApp - Inscription enregistrée pour `,
+        subject: (e: Event) => `NiortWebApp - Inscription enregistrée`,
         data: (e: Event) => {
             return {
                 eventId: e.id,
@@ -27,6 +74,9 @@ export class Config {
     };
 
 
+    /**
+     * Inscription à l'événement à distance
+     */
     public static registeredEmailOnline = {
         template: 'niortweb_inscription_reussie_distance',
         subject: (c: Contributor) => `NiortWeb - Inscription enregistrée pour "${c.meetup.label}", le  ${c.meetup.date} à 12h30`,
@@ -41,6 +91,9 @@ export class Config {
         }
     };
 
+    /**
+     * Inscription à l'évément
+     */
     public static registeredEmail = {
         template: 'niortweb_inscription_reussie_presentiel',
         subject: (c: Contributor) => `NiortWeb - Inscription enregistrée pour "${c.meetup.label}", le  ${c.meetup.date} à 12h30`,

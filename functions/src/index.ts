@@ -10,6 +10,7 @@ import 'moment/locale/fr';
 import meetupResource from './resources/meetup.resource';
 import eventResource from './resources/event.resource';
 import myProfilResource from './resources/myprofil.resource';
+import schedulerResource from './resources/scheduler.resource';
 
 const customCreds: any = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 if (customCreds) {
@@ -34,9 +35,11 @@ app.get('/api/meetup/:id/counter', registrationResource.registeredCount.bind(reg
 app.get('/api/meetup/:id/webconf', meetupResource.webconf.bind(meetupResource));
 app.get('/api/meetup/:id/contributors', meetupResource.contributors.bind(meetupResource));
 
+// version 2 avec app.niortweb.fr
 app.post('/api/events', eventResource.addEvent.bind(eventResource));
 app.get('/api/events', eventResource.getEvents.bind(eventResource));
 app.put('/api/events/:id', eventResource.update.bind(eventResource));
+app.post('/api/heartbeat', schedulerResource.heatbeat.bind(schedulerResource));
 
 app.get('/api/my-profil', myProfilResource.get.bind(myProfilResource));
 app.put('/api/my-profil', myProfilResource.update.bind(myProfilResource));

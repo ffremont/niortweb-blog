@@ -8,6 +8,7 @@ import * as uuid from 'uuid-random';
 import { Contributor } from "../models/v2/Contributor";
 import notifService from '../services/notif.service';
 import { Config } from "../config";
+import { Review } from "../models/v2/Review";
 
 class EventResource {
 
@@ -23,7 +24,30 @@ class EventResource {
     public async getEvents(request: Request, response: Response) {
         const currentEmail = await AppUtil.authorized(request);
 
-        const events = await this.eventDao.getAll();
+        let events = await this.eventDao.getAll();
+        if(!AppUtil.isAdmin(currentEmail||'')){
+            // on masque les informations nominatives
+            events = events.map((e:Event) => {
+                e.contributors = (e.contributors || []).map((c: Contributor) => {
+                    c.email = c.email === currentEmail ? c.email : '**********';
+                    if(c.email !== currentEmail){
+                        c.fullName = '********';
+                        c.iam = '********';
+                        c.comment = '';
+                    }
+                    return c;
+                });
+                e.reviews = (e.reviews).map((r:Review) => {
+                    if(r.email !== currentEmail){
+                        r.email = '*******';
+                        r.comment = '';
+                    }
+                    return r;
+                })
+                return e;
+            })
+        }
+        
 
         AppUtil.ok(response, events.filter((e:Event) => currentEmail && AppUtil.isAdmin(currentEmail) ? true: e.state === StateEnum.OK)); 
     }
@@ -63,31 +87,53 @@ class EventResource {
         }
 
         const event = request.body as Event;
-        const currentEvent = await this.eventDao.get(eventId);
-        if(!currentEvent){
+        const bddEvent = await this.eventDao.get(eventId);
+        if(!bddEvent){
             AppUtil.notFound(response);return;
+        }
+
+        // MAJ que de la contribution
+        // récup. de la contribution du user connecté
+        const registration = event.contributors.find((c:Contributor)=> c.email === currentEmail),
+        absentOfContributors = bddEvent.contributors.findIndex((c:Contributor) => c.email === currentEmail) === -1;
+        if(registration && absentOfContributors){
+            bddEvent.contributors.push(registration);
+            AppUtil.debug('Ajout un contributeur')
+            await this.eventDao.set(bddEvent);
+            try{
+                AppUtil.debug('Envoi email inscription')
+                await notifService.send(
+                    Config.registrationOnEvent.template, 
+                    currentEmail, 
+                    Config.registrationOnEvent.subject(bddEvent),
+                    Config.registrationOnEvent.data(bddEvent)
+                );
+            }catch(e){
+                AppUtil.error('Envoi email pour inscription impossible',e);
+            }
+        }
+
+        if(!registration && !absentOfContributors){
+            AppUtil.debug('Retrait du contributeur');
+            bddEvent.contributors = bddEvent.contributors.filter(c => c.email !== currentEmail);
+            await this.eventDao.set(bddEvent);
+        }
+        
+        // on ne peut que donner un avis (pas le reprendre :D)
+        const myNewReview = (event.reviews || []).find((r:Review) => r.email === currentEmail);
+        AppUtil.debug('Participant a-t-il donné son avis ? ', myNewReview);
+        if(myNewReview && ((bddEvent.reviews || []).findIndex((r:Review) => r.email === currentEmail) === -1)){
+            bddEvent.reviews = (bddEvent.reviews || []).concat([myNewReview]);
+            AppUtil.info(`Avis donné pour ${currentEmail}`);
+            await this.eventDao.set(bddEvent);
         }
 
         if(AppUtil.isAdmin(currentEmail)){
             // todo
-        }else{
-            // MAJ que de la contribution
-            // récup. de la contribution du user connecté
-            const registration = event.contributors.find((c:Contributor)=> c.email === currentEmail);
-            if(registration && (currentEvent.contributors.findIndex((c:Contributor) => c.email === currentEmail) === -1)){
-                currentEvent.contributors.push(registration);
-                await this.eventDao.set(currentEvent);
-
-                await notifService.send(
-                    Config.registrationOnEvent.template, 
-                    currentEmail, 
-                    Config.registrationOnEvent.subject(currentEvent),
-                    Config.registrationOnEvent.data(currentEvent)
-                );
-            }
-        }               
+        }
+                      
         
-        AppUtil.ok(response, currentEvent);
+        AppUtil.ok(response, bddEvent);
     }
 }
 

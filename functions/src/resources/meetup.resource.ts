@@ -4,6 +4,7 @@ import { Config } from "../config";
 import { ContributorDao } from "../dao/contributor.dao";
 import * as functions from 'firebase-functions';
 
+//@deprecated
 class MeetupResource {
 
     adminApiKey: string = functions.config().admin.key;
