@@ -11,6 +11,7 @@ import meetupResource from './resources/meetup.resource';
 import eventResource from './resources/event.resource';
 import myProfilResource from './resources/myprofil.resource';
 import schedulerResource from './resources/scheduler.resource';
+import { AppUtil } from './apputil';
 
 const customCreds: any = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 if (customCreds) {
@@ -43,5 +44,26 @@ app.post('/api/heartbeat', schedulerResource.heatbeat.bind(schedulerResource));
 
 app.get('/api/my-profil', myProfilResource.get.bind(myProfilResource));
 app.put('/api/my-profil', myProfilResource.update.bind(myProfilResource));
+
+
+// @see https://cloud.google.com/dialogflow/es/docs/fulfillment-webhook
+app.post('/api/sandbox/dialog-flow', (req, res) => {
+    AppUtil.info('sandbox / dialog-flow '+JSON.stringify(req.body));
+    const {intent} = req.body;
+
+    if(intent && intent.displayName === 'creer_checklist'){
+        AppUtil.info('creer_checklist !! ');
+    }
+
+
+
+    AppUtil.ok(res, {
+        fulfillmentMessages: [{
+            text: {
+                text: ['mon web hook']
+            }
+        }]
+    });
+});
 
 export const api = functions.https.onRequest(app);

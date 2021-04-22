@@ -9,6 +9,11 @@ export interface Contributor{
      */
     iam:string;
 
+    /**
+     * Indique si le contributeur viendra en présentiel
+     */
+    faceToFace: boolean;
+
     
     comment:string;
 

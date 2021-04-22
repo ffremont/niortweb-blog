@@ -33,11 +33,14 @@ params:
   #myApi: http://localhost:5001/niortweb/us-central1/api/
   
 
-  registerFormUrl: /inscription-non-ouverte
+  registerFormUrl: https://app.niortweb.fr
   #registerFormUrl: /inscription
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 0
+  meetupTs: 1620131400
+  
+  
+  
   meetupId: QUEST_CE_QUE_IA_160221
   meetupTitle: Qu’est-ce que l’IA ? Par où commencer ?
   meetupSpeaker: Quentin NICOLLE
@@ -111,8 +114,8 @@ params:
     imageWidth: 500px  
 
   news:
-    title: /!\ Prochaine date le 11/01/21
-    description: A NiortTech à 12h30, inscrivez-vous ;-)
+    title: /!\ Prochaine date le 04/05
+    description: En ligne + NiortTech à 12h30, inscrivez-vous ;-)
 
   # homepage options
   homepage:
@@ -121,7 +124,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous le 04/05 pour "Mon 1er chatbot from scratch avec DialogFlow" !
 
     # option to specify image in the homepage
     image: "/images/home.png" # worker.svg 
