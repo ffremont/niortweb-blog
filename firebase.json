@@ -13,7 +13,7 @@
     }],
     "redirects": [ {
       "source": "/agenda",
-      "destination": "https://app.niortweb.fr/widget",
+      "destination": "https://app.niortweb.fr/agenda",
       "type": 301
     } ]
   },
