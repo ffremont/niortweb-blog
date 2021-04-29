@@ -13,8 +13,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "firebase-admin": "^9.4.2",
-    "firebase-functions": "^3.13.0",
+    "@google-cloud/dialogflow": "^3.5.0",
     "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.8",
     "@types/express": "^4.17.9",
@@ -22,6 +21,8 @@
     "axios": "^0.21.0",
     "cors": "^2.8.5",
     "extend": "^3.0.2",
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.0",
     "got": "^11.8.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",

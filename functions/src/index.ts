@@ -12,6 +12,7 @@ import eventResource from './resources/event.resource';
 import myProfilResource from './resources/myprofil.resource';
 import schedulerResource from './resources/scheduler.resource';
 import { AppUtil } from './apputil';
+import {protos} from '@google-cloud/dialogflow';
 
 const customCreds: any = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 if (customCreds) {
@@ -56,6 +57,24 @@ app.post('/api/sandbox/dialog-flow', (req, res) => {
     }
 
 
+
+    AppUtil.ok(res, {
+        fulfillmentMessages: [{
+            text: {
+                text: ['mon web hook']
+            }
+        }]
+    });
+});
+
+app.post('/api/sandbox/dialog-flow/suis-je-garanti-assurance', (req, res) => {
+    AppUtil.info('sandbox / dialog-flow '+JSON.stringify(req.body));
+    const myWebhookRequest = req.body as protos.google.cloud.dialogflow.v2.WebhookRequest;
+
+    
+    if(myWebhookRequest.queryResult?.action === 'garantie-choisie'){
+        AppUtil.info('garantie-choisie');
+    }
 
     AppUtil.ok(res, {
         fulfillmentMessages: [{
