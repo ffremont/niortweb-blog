@@ -85,11 +85,11 @@ app.post('/api/sandbox/dialog-flow/suis-je-garanti-assurance', (req, res) => {
     AppUtil.debug('call /api/sandbox/dialog-flow/suis-je-garanti-assurance ');
     const myWebhookResponse = {
         outputContexts: myWebhookRequest.queryResult?.outputContexts,
-        fulfillmentMessages: [{
+        /*fulfillmentMessages: [{
             text: {
                 text: ['Texte venant du WH (valeur par défaut)']
             }
-        }]
+        }]*/
     } as protos.google.cloud.dialogflow.v2.WebhookResponse;
 
     // traitement en fonction de l'action
