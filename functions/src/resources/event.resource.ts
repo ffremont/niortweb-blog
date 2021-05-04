@@ -25,6 +25,7 @@ class EventResource {
         const currentEmail = await AppUtil.authorized(request);
 
         let events = await this.eventDao.getAll();
+        AppUtil.debug(`get Events with  ${currentEmail}`)
         if(!AppUtil.isAdmin(currentEmail||'')){
             // on masque les informations nominatives
             events = events.map((e:Event) => {
