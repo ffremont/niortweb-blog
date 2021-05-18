@@ -6,11 +6,11 @@ import { Event } from "./models/v2/Event";
 export class Config {
     public static appBaseUrl = 'https://niortweb.fr';
     public static webappBaseUrl = 'https://app.niortweb.fr';
-    public static ADMINS = [
-        'ff.fremont.florent@gmail.com', 
-        'romain.barraud1@gmail.com',
-        'stephane.chauvin@mydataball.com'
-    ];
+    public static ROLES : any= {
+        'ff.fremont.florent@gmail.com': ['ORGANIZER', 'ADMIN'],
+        'romain.barraud1@gmail.com': ['ORGANIZER'],
+        'stephane.chauvin@mydataball.com': ['ORGANIZER']
+    }
     public static SOON_EXPECTED = 4 * 3600000; // une événement est dit "attendu", lorsqu'il est prévu dans les 4 heures
     public static ASK_REVIEW_IN = 48 * 3600000; // demande une avis après 48h
 

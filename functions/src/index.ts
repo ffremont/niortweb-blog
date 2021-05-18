@@ -41,6 +41,8 @@ app.get('/api/meetup/:id/contributors', meetupResource.contributors.bind(meetupR
 app.post('/api/events', eventResource.addEvent.bind(eventResource));
 app.get('/api/events', eventResource.getEvents.bind(eventResource));
 app.put('/api/events/:id', eventResource.update.bind(eventResource));
+app.post('/api/events/:id/register-email', eventResource.registerEmail.bind(eventResource));
+app.delete('/api/events/:id', eventResource.removeEvent.bind(eventResource));
 app.post('/api/heartbeat', schedulerResource.heatbeat.bind(schedulerResource));
 
 app.get('/api/my-profil', myProfilResource.get.bind(myProfilResource));

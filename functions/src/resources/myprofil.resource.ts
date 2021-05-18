@@ -26,7 +26,7 @@ class MyProfilResource{
             if(!orderId){ throw 'Identifiant invalide'}
 
             const user: User = (await this.userDao.get(currentUserEmail)) || {email: currentUserEmail};
-            user.isAdmin = AppUtil.isAdmin(currentUserEmail);
+            user.roles = AppUtil.isAdmin(currentUserEmail) ? ['ORGANIZER']: [];
 
             AppUtil.expires(response, 15);
             AppUtil.ok(response, user);

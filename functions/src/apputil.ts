@@ -83,7 +83,15 @@ export class AppUtil{
      * @param email 
      */
     public static isAdmin(email:string){
-        return Config.ADMINS.indexOf(email) > -1;
+        return Config.ROLES[email] && Config.ROLES[email].indexOf('ADMIN') > -1;
+    }
+
+    /**
+     * Retourne vrai si c'est un organisateur
+     * @param email 
+     */
+     public static isOrganizer(email:string){
+        return Config.ROLES[email] && Config.ROLES[email].indexOf('ORGANIZER') > -1;
     }
 
     /**

@@ -26,7 +26,7 @@ class EventResource {
 
         let events = await this.eventDao.getAll();
         AppUtil.debug(`get Events with  ${currentEmail}`)
-        if(!AppUtil.isAdmin(currentEmail||'')){
+        if(!AppUtil.isOrganizer(currentEmail||'')){
             // on masque les informations nominatives
             events = events.map((e:Event) => {
                 e.contributors = (e.contributors || []).map((c: Contributor) => {
@@ -61,17 +61,90 @@ class EventResource {
      */
     public async addEvent(request: Request, response: Response) {
         const currentEmail = await AppUtil.authorized(request);
-        if ((currentEmail === null) || !AppUtil.isAdmin(currentEmail)) {
+        if ((currentEmail === null) || !AppUtil.isOrganizer(currentEmail)) {
             AppUtil.notAuthorized(response); return;
         }
 
         const newEvent = request.body as Event;
         newEvent.id = uuid();
         newEvent.createdAt = (new Date()).getTime();
+        newEvent.state = StateEnum.DRAFT;
         
         await this.eventDao.set(newEvent);
 
         AppUtil.ok(response, newEvent); 
+    }
+
+    /**
+     *  Efface un événement en mode brouillon
+     * @param request 
+     * @param response 
+     * @returns 
+     */
+    public async removeEvent(request: Request, response: Response) {
+        const eventId = request.params.id;
+        if(!eventId){ throw 'Identifiant invalide'}
+
+        const currentEmail = await AppUtil.authorized(request);
+        if ((currentEmail === null) || !AppUtil.isOrganizer(currentEmail)) {
+            AppUtil.notAuthorized(response); return;
+        }
+
+        const bddEvent = await this.eventDao.get(eventId);
+        if(!bddEvent){
+            AppUtil.notFound(response);return;
+        } 
+
+        if(bddEvent.state !== StateEnum.DRAFT){
+            AppUtil.badRequest(response); return;
+        }
+
+        await this.eventDao.delete(bddEvent.id);
+
+        AppUtil.ok(response);
+    }
+
+    /**
+     * Permet d'inscrire un contributeur (participant) à un événement
+     * @param request 
+     * @param response 
+     * @returns 
+     */
+    public async registerEmail(request: Request, response: Response) {
+        const eventId = request.params.id;
+        if(!eventId){ throw 'Identifiant invalide'}
+
+        const currentEmail = await AppUtil.authorized(request);
+        if ((currentEmail === null) || !AppUtil.isOrganizer(currentEmail)) {
+            AppUtil.notAuthorized(response); return;
+        }
+
+        const newContributor = request.body as Contributor;
+        const bddEvent = await this.eventDao.get(eventId);
+        if(!bddEvent){
+            AppUtil.notFound(response);return;
+        }
+
+        // MAJ de la liste de contributeurs (participants)
+        const contributorAlreadyExists = (bddEvent.contributors || []).some((c:Contributor)=> c.email === newContributor.email)
+        if(!contributorAlreadyExists){
+            bddEvent.contributors.push(newContributor);
+            AppUtil.debug('Ajout un contributeur')
+            await this.eventDao.set(bddEvent);
+            try{
+                AppUtil.debug('Envoi email inscription')
+                await notifService.send(
+                    Config.registrationOnEvent.template, 
+                    currentEmail, 
+                    Config.registrationOnEvent.subject(bddEvent),
+                    Config.registrationOnEvent.data(bddEvent)
+                );
+            }catch(e){
+                AppUtil.error('Envoi email pour inscription impossible',e);
+            }
+        }
+
+        AppUtil.ok(response, bddEvent);
     }
 
     /**
@@ -130,11 +203,22 @@ class EventResource {
             await this.eventDao.set(bddEvent);
         }
 
-        if(AppUtil.isAdmin(currentEmail)){
-            if(event.description){
-                bddEvent.description = event.description;
-                await this.eventDao.set(bddEvent);
-            }
+        if(AppUtil.isOrganizer(currentEmail)){
+            const newEvent:any = {...bddEvent};
+            newEvent.description = event.description || bddEvent.description || null;
+            newEvent.speaker = event.speaker || bddEvent.speaker || null;
+            newEvent.title = event.title || bddEvent.title || null;
+            newEvent.resumeLink = event.resumeLink || bddEvent.resumeLink || null;
+            newEvent.where = event.where || bddEvent.where || null;
+            newEvent.format = event.format || bddEvent.format || null;
+            newEvent.youtubeLink = event.youtubeLink || bddEvent.youtubeLink || null;
+            newEvent.mode = event.mode || bddEvent.mode|| null;
+            newEvent.duration = event.duration || bddEvent.duration|| null;
+            newEvent.image = event.image || bddEvent.image|| null;
+            newEvent.scheduled = event.scheduled || bddEvent.scheduled|| null;
+            newEvent.tags = event.tags || bddEvent.tags|| null;
+            newEvent.allowMaxContributors = event.allowMaxContributors || bddEvent.allowMaxContributors|| null;
+            await this.eventDao.set(newEvent);
         }
                       
         

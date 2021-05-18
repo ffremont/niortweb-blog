@@ -24,6 +24,12 @@ export class EventDao{
         }
     }
 
+    public async delete(id:string): Promise<void>{
+        if(!id){ return }
+
+        await context.db().collection(Context.EVENTS_COLLECTION).doc(id).delete();
+    }
+
     /***
      * Retourne les événements dits attendus dans les SOON_EXPECTED ms .
      */
