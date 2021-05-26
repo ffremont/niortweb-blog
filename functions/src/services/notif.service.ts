@@ -25,11 +25,16 @@ export class NotifService {
      * @param subject 
      * @param data 
      */
-    public async send(templateName: string, to: string, subject: string, data: any): Promise<void> {
+    public async send(templateName: string, to: string|string[], subject: string, data: any): Promise<void> {
         AppUtil.debug("notif > send ", templateName, to, subject, data);
         const body = await this.createData();
         body.template = templateName;
-        body.to = to;
+        if(typeof to === 'string'){
+            body.to = to;
+        }else{
+            body.lists = to.toString();
+        }
+        
         body.subject = subject;
 
         for (let [key, value] of Object.entries(data)) {

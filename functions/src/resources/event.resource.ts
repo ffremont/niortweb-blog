@@ -203,7 +203,7 @@ class EventResource {
             await this.eventDao.set(bddEvent);
         }
 
-        if(AppUtil.isOrganizer(currentEmail)){
+        if(AppUtil.isOrganizer(currentEmail) || AppUtil.isAdmin(currentEmail)){
             const newEvent:any = {...bddEvent};
             newEvent.description = event.description || bddEvent.description || null;
             newEvent.speaker = event.speaker || bddEvent.speaker || null;
@@ -218,6 +218,11 @@ class EventResource {
             newEvent.scheduled = event.scheduled || bddEvent.scheduled|| null;
             newEvent.tags = event.tags || bddEvent.tags|| null;
             newEvent.allowMaxContributors = event.allowMaxContributors || bddEvent.allowMaxContributors|| null;
+            
+            if(AppUtil.isAdmin(currentEmail)){
+                newEvent.state = event.state || bddEvent.state || StateEnum.DRAFT;
+            }
+
             await this.eventDao.set(newEvent);
         }
                       

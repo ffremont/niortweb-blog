@@ -2,14 +2,19 @@ import { Contributor } from "./models/Contributor";
 
 import * as moment from 'moment';
 import { Event } from "./models/v2/Event";
+import { EmailCommunication } from "./models/v2/EmailCommunication";
 
 export class Config {
     public static appBaseUrl = 'https://niortweb.fr';
     public static webappBaseUrl = 'https://app.niortweb.fr';
+    public static newsletterElasticMailList = 'oooo';
     public static ROLES : any= {
         'ff.fremont.florent@gmail.com': ['ORGANIZER', 'ADMIN'],
         'romain.barraud1@gmail.com': ['ORGANIZER'],
-        'stephane.chauvin@mydataball.com': ['ORGANIZER']
+        'stephane.chauvin@mydataball.com': ['ORGANIZER'],
+        'cedric.teyton@promyze.com': ['ORGANIZER'],
+        'sylvie.touzeau@agglo-niort.fr': ['ORGANIZER'],
+        'daniel.bartolo@externe.maif.fr':  ['ORGANIZER']
     }
     public static SOON_EXPECTED = 4 * 3600000; // une événement est dit "attendu", lorsqu'il est prévu dans les 4 heures
     public static ASK_REVIEW_IN = 48 * 3600000; // demande une avis après 48h
@@ -39,6 +44,26 @@ export class Config {
                     eventId: e.id,
                     eventTitle: e.title,
                     eventScheduled: `${moment(e.scheduled).format('HH:mm')} le ${moment(e.scheduled).format('ddd D MMM')}`
+                }
+            }
+        }
+    };
+
+    public static newEvent = {
+        email : {
+            template: 'niortwebapp_nouvelle_date',
+            subject: (e: EmailCommunication) => e.subject,
+            data: (e: EmailCommunication) => {
+                return {
+                    eventId: e.eventId,
+                    eventTitle: e.event.title,
+                    by: `${e.event.speaker.firstname} ${e.event.speaker.lastname}, ${e.event.speaker.job}`,
+                    title: e.title,
+                    subTitle: e.subTitle,
+                    description: e.event.description,
+                    where: e.event.where,
+                    duration: e.event.duration+'',
+                    eventScheduled: `${moment(e.event.scheduled).format('HH:mm')} le ${moment(e.event.scheduled).format('ddd D MMM')}`
                 }
             }
         }

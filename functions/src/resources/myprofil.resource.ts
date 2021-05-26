@@ -1,5 +1,6 @@
 import {Request,Response} from 'express';
 import { AppUtil } from '../apputil';
+import { Config } from '../config';
 import { UserDao } from '../dao/user.dao';
 import { User } from '../models/v2/User';
 
@@ -26,7 +27,7 @@ class MyProfilResource{
             if(!orderId){ throw 'Identifiant invalide'}
 
             const user: User = (await this.userDao.get(currentUserEmail)) || {email: currentUserEmail};
-            user.roles = AppUtil.isAdmin(currentUserEmail) ? ['ORGANIZER']: [];
+            user.roles = Config.ROLES[currentUserEmail] || [];
 
             AppUtil.expires(response, 15);
             AppUtil.ok(response, user);
