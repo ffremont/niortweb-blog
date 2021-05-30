@@ -14,6 +14,7 @@ export class Config {
         'stephane.chauvin@mydataball.com': ['ORGANIZER'],
         'cedric.teyton@promyze.com': ['ORGANIZER'],
         'sylvie.touzeau@agglo-niort.fr': ['ORGANIZER'],
+        'camille@ipsoon.fr': ['ORGANIZER'],
         'daniel.bartolo@externe.maif.fr':  ['ORGANIZER']
     }
     public static SOON_EXPECTED = 4 * 3600000; // une événement est dit "attendu", lorsqu'il est prévu dans les 4 heures
