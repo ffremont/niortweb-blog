@@ -37,7 +37,7 @@ params:
   #registerFormUrl: /inscription
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 1621938600
+  meetupTs: 1623148200
   
   
   
@@ -124,7 +124,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous le 25/05 pour "IA et ses utilisations" !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous le 08/06 sur "La qualité de code" !
 
     # option to specify image in the homepage
     image: "/images/home.png" # worker.svg 
