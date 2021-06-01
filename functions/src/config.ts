@@ -7,7 +7,7 @@ import { EmailCommunication } from "./models/v2/EmailCommunication";
 export class Config {
     public static appBaseUrl = 'https://niortweb.fr';
     public static webappBaseUrl = 'https://app.niortweb.fr';
-    public static newsletterElasticMailList = 'oooo';
+    public static newsletterElasticMailList = 'niortweb_newsletter';
     public static ROLES : any= {
         'ff.fremont.florent@gmail.com': ['ORGANIZER', 'ADMIN'],
         'romain.barraud1@gmail.com': ['ORGANIZER'],
@@ -52,7 +52,7 @@ export class Config {
 
     public static newEvent = {
         email : {
-            template: 'niortwebapp_nouvelle_date',
+            template: 'niortwebapp_assistant_comm',
             subject: (e: EmailCommunication) => e.subject,
             data: (e: EmailCommunication) => {
                 return {

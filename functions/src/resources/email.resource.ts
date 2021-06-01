@@ -1,7 +1,7 @@
 import { AppUtil } from "../apputil";
 import { Request, Response } from 'express';
 import { Config } from "../config";
-//import notifyService from '../services/notif.service';
+import notifyService from '../services/notif.service';
 import { EmailCommunication } from "../models/v2/EmailCommunication";
 import { EventDao } from "../dao/event.dao";
 
@@ -35,12 +35,12 @@ class EmailResource {
             subject:Config.newEvent.email.subject(emailCommunication),
             data:Config.newEvent.email.data(emailCommunication)
         })
-        /*await notifyService.send(
+        await notifyService.send(
             emailCommunication.templateName || Config.newEvent.email.template, 
             emailCommunication.testEmail ? emailCommunication.testEmail: [Config.newsletterElasticMailList],
             Config.newEvent.email.subject(emailCommunication),
             Config.newEvent.email.data(emailCommunication)
-        );*/
+        );
     
         AppUtil.ok(response);
     }
