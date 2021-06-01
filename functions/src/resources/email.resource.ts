@@ -29,12 +29,7 @@ class EmailResource {
         emailCommunication.eventId = eventId;
         emailCommunication.event = await this.eventDao.get(emailCommunication.eventId) as any;
 
-        console.log({
-            tpl:emailCommunication.templateName || Config.newEvent.email.template, 
-            mailList:emailCommunication.testEmail ? emailCommunication.testEmail: [Config.newsletterElasticMailList],
-            subject:Config.newEvent.email.subject(emailCommunication),
-            data:Config.newEvent.email.data(emailCommunication)
-        })
+        
         await notifyService.send(
             emailCommunication.templateName || Config.newEvent.email.template, 
             emailCommunication.testEmail ? emailCommunication.testEmail: [Config.newsletterElasticMailList],
