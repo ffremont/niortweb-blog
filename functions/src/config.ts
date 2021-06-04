@@ -15,7 +15,8 @@ export class Config {
         'cedric.teyton@promyze.com': ['ORGANIZER'],
         'sylvie.touzeau@agglo-niort.fr': ['ORGANIZER'],
         'camille@ipsoon.fr': ['ORGANIZER'],
-        'daniel.bartolo@externe.maif.fr':  ['ORGANIZER']
+        'daniel.bartolo@externe.maif.fr':  ['ORGANIZER'],
+        'dirakkk@hotmail.com': ['ORGANIZER']
     }
     public static SOON_EXPECTED = 4 * 3600000; // une événement est dit "attendu", lorsqu'il est prévu dans les 4 heures
     public static ASK_REVIEW_IN = 48 * 3600000; // demande une avis après 48h
