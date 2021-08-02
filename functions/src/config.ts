@@ -16,7 +16,8 @@ export class Config {
         'sylvie.touzeau@agglo-niort.fr': ['ORGANIZER'],
         'camille@ipsoon.fr': ['ORGANIZER'],
         'daniel.bartolo@externe.maif.fr':  ['ORGANIZER'],
-        'dirakkk@hotmail.com': ['ORGANIZER']
+        'dirakkk@hotmail.com': ['ORGANIZER'],
+        'contact.fabrice.bardet@gmail.com': ['ORGANIZER']
     }
     public static SOON_EXPECTED = 4 * 3600000; // une événement est dit "attendu", lorsqu'il est prévu dans les 4 heures
     public static ASK_REVIEW_IN = 48 * 3600000; // demande une avis après 48h
