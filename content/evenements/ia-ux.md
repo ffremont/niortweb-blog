@@ -7,7 +7,7 @@ tags: ["javascript", "ia", "ux"]
 draft: false
 ---
 
-Le 13.10.21 à NiortTech, présenté par Camille COHIGNAC.
+Le 13.10.21 à NiortTech, présenté par Camille COHIGNAC, founder ipsoon / founder The Mindset Creative Club.
 
 # Sujet : Quelle ergonomie pour les interfaces conversationnelles ?
 
