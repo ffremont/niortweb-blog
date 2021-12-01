@@ -6,3 +6,5 @@ resources/_gen
 functions/.runtimeconfig.json
 !functions/src/*.DS_Store
 .firebase/hosting.cHVibGlj.cache
+
+**/.DS_Store

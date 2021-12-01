@@ -4,6 +4,7 @@ date: 2021-09-29T17:00:00+01:00
 summary: "Dans le domaine de la cybersécurité, il est devenu primordial d'anticiper les attaques. 
 Nous présenterons une démarche pour extraire des données opensources des graphes de relation entre les IP et AS mondiaux et le calcul des sauts topologiques de ces graphes pour détecter des évènements à venir qui peuvent concourir à une attaque ou une préparation à une attaque."
 summaryImage: "/assets/ia-et-securite/rjzka5pj7noy1zmjdtkx.jpeg"
+image: "/assets/ia-et-securite/rjzka5pj7noy1zmjdtkx.jpeg"
 tags: ["javascript", "ia", "securite"]
 draft: false
 ---

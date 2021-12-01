@@ -143,7 +143,7 @@ params:
     # facebook: your.username
     # option to specify your github account in the footer; **uncomment** the below line to show in footer
     github: ffremont
-    slack: https://join.slack.com/t/niortweb/shared_invite/zt-waku7536-bbV9WivBSdlTBVY8dJrUSA
+    slack: https://join.slack.com/t/niortweb/shared_invite/zt-zjv74zua-jMRy8ODVbmaBQpgY3ETTsA
     # option to specify your twitter username in the footer; **uncomment** the below line to show in footer
     #twitter: ff_florent
     # option to specify your instagram username in the footer; **uncomment** the below line to show in footer
