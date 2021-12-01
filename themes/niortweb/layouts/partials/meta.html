@@ -11,16 +11,16 @@
 
 {{if gt (len .Description) 1}}
     <meta name="description" content="{{- .Description -}}">
-    <meta property="og:description" content="{{- .Description -}}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{- .Description -}}" />
 {{else}}
     <meta name="description" content="{{- $description -}}">
-    <meta property="og:description" content="{{- $description -}}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{- $description -}}" />
 {{end}}
 {{if isset .Params "image"}}
-    <meta property="og:image" content="{{- .Params.image | absURL -}}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{- .Params.image | absURL -}}" />
 {{end}}
 {{ if isset .Params "title"}}
-<meta property="og:title" content="{{- .Params.title -}}" />
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{- .Params.title -}}" />
 {{end}}
 
 <base href="/">
