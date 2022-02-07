@@ -1,6 +1,6 @@
 ---
-title: "🤖 💬 AAAA Quelle ergonomie pour les interfaces conversationnelles ?"
-date: 2021-10-14T08:00:00+01:00
+title: "🤖 💬 Quelle ergonomie pour les interfaces conversationnelles ?"
+date: 2021-10-14T09:00:00+01:00
 summary: "En partant des codes de la conversation du monde réel et en cherchant à comprendre sa dynamique, nous intégrerons petit à petit les contraintes liées aux interfaces vocales ou graphiques pour essayer d’imaginer une bonne expérience de conversation humain/machine."
 summaryImage: "/assets/ia-ux/hvze9reyjj7zemreppkh.png"
 tags: ["javascript", "ia", "ux"]

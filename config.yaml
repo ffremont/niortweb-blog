@@ -37,7 +37,7 @@ params:
   #registerFormUrl: /inscription
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 0
+  meetupTs: 1645705800
   
   
   
@@ -114,7 +114,7 @@ params:
     imageWidth: 500px  
 
   news:
-    #title: /!\ Prochaine date le 04/05
+    title: /!\ Prochaine date le 04/05
     description: En ligne + NiortTech à 12h30, inscrivez-vous ;-)
 
   # homepage options
