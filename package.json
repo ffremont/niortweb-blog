@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ffremont/niortweb-blog#readme",
   "devDependencies": {
     "firebase-tools": "^7.16.2",
-    "hugo": "0.0.3"
+    "hugo": "0.0.3",
+    "owasp-dependency-check": "^0.0.18"
   }
 }
