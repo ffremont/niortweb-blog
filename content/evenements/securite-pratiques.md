@@ -23,7 +23,7 @@ Que dois-je mettre en place pour mener à bien la création / reprise d'une appl
 Sans tomber dans l'exhaustivité, il s'agit d'aborder concrètement les pratiques que l'on peut mettre en place pour apporter une couche de sécurité à nos applications.
 
 # A voir et revoir 
-{{< youtube id="x8w9D4EdwgU" >}}
+{{< youtube id="N27p78lVihs" >}}
 
 # Slides
 {{< slides url="//slides.com/florentfremont/pratiques-secu/embed" height="400" width="576" >}}
