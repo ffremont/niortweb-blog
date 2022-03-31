@@ -37,7 +37,7 @@ params:
   #registerFormUrl: /inscription
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 1648557000
+  meetupTs: 0
   
   
   
