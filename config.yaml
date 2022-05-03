@@ -33,11 +33,11 @@ params:
   #myApi: http://localhost:5001/niortweb/us-central1/api/
   
 
-  registerFormUrl: https://app.niortweb.fr
-  #registerFormUrl: /inscription
+  #registerFormUrl: https://app.niortweb.fr
+  registerFormUrl: https://forms.gle/7CyXFHBhWXdn5KrD6
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 0
+  meetupTs: 1652790600
   
   
   

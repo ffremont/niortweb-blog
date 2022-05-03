@@ -8,6 +8,7 @@
 
         {{- $homepage   := .Site.Params.homepage -}}
         {{- $meetupTs   := .Site.Params.meetupTs -}}
+        {{- $registerFormUrl   := .Site.Params.registerFormUrl -}}
         {{- $title      := index $homepage "title" -}}
         {{- $subtitle   := index $homepage "subtitle" -}}
         {{- $image      := index $homepage "image" -}}
@@ -26,7 +27,7 @@
                 {{- end -}}
                
                 <p style="text-align: center;">{{ if $meetupTs }}
-               <a class="button cta rounded primary-btn raised" style="margin-top:10px;" href="/agenda">
+               <a class="button cta rounded primary-btn raised" style="margin-top:10px;" href="{{- $registerFormUrl -}}">
                     Prochaine date le {{ (time $meetupTs).Format "02/01/2006" }}
                     </a>
                 {{else}}
