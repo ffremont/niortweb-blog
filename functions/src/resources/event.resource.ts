@@ -135,7 +135,7 @@ class EventResource {
                 AppUtil.debug('Envoi email inscription')
                 await notifService.send(
                     Config.registrationOnEvent.template, 
-                    currentEmail, 
+                    newContributor.email, 
                     Config.registrationOnEvent.subject(bddEvent),
                     Config.registrationOnEvent.data(bddEvent)
                 );
