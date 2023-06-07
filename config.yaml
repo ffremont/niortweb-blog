@@ -34,10 +34,10 @@ params:
   
 
   #registerFormUrl: https://app.niortweb.fr
-  registerFormUrl: /
+  registerFormUrl: https://forms.gle/siztrzKX6981kbie6
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 0
+  meetupTs: 1686918606
   
   
   
@@ -124,7 +124,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous !
+    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous ! Prochain sujet  "Démarrer avec Spring Webflux"
 
     # option to specify image in the homepage
     image: "/images/home.png" # worker.svg 
