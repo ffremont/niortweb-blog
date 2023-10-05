@@ -37,7 +37,7 @@ params:
   registerFormUrl: https://forms.gle/siztrzKX6981kbie6
   # https://www.epochconverter.com/ 
   # 11/01/21 si valorisé, alors le bouton HOME est visible
-  meetupTs: 1687177806
+  meetupTs: 0
   
   
   
@@ -124,7 +124,7 @@ params:
     # option to specify the subtitle in the homepage
     
     #subtitle: Envie de progresser ou de partager ton expérience informatique ? Rejoins-nous !
-    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous ! Prochain sujet  "Démarrer avec Spring Webflux"
+    subtitle: Envie de progresser ou de partager ton expérience informatique ?  Rejoins-nous ! 
 
     # option to specify image in the homepage
     image: "/images/home.png" # worker.svg 
